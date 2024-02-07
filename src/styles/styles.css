@@ -1,0 +1,21 @@
+html, body {
+  background-color: antiquewhite;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: .7fr 1fr .7fr;
+  grid-auto-flow: column;
+
+}
+
+
+
+.form-div {
+  display: grid;
+  font-size: large;
+  grid-column: 2 / 3;
+}
