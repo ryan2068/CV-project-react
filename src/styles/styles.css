@@ -7,8 +7,8 @@ html, body {
   height: 100vh;
 
   display: grid;
-  grid-template-columns: .7fr 1fr .7fr;
-  grid-auto-flow: column;
+  grid-template-columns: .6fr 1fr .6fr;
+  grid-template-rows: .7fr 1fr .7fr;
 
 }
 
@@ -18,4 +18,6 @@ html, body {
   display: grid;
   font-size: large;
   grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-content: center;
 }
