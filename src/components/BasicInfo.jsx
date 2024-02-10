@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "/Users/ryan/OdinProject/cv-application-react/src/styles/styles.css"
 
-export function BasicInfo() {
-  const [name, setName] = useState("");
+function BasicInfo({ onChange, value }) {
   const [email, setEmail] = useState("")
   const [phoneNumber, setPhoneNumber] = useState(0)
 
@@ -18,7 +17,7 @@ export function BasicInfo() {
       <div className="form-div">
         <form onChange={handleSubmit} action="">
           <label htmlFor="name">Please enter your name   </label>
-          <input type="text" name="name" onChange={e => setName(e.target.value)} /> <br></br>
+          <input type="text" name="name" value={value} onChange={onChange}/><br></br>
           <label htmlFor="email">Please enter your email   </label>
           <input type="email" name="email" onChange={e => setEmail(e.target.value)} /><br></br>
           <label htmlFor="phoneNumber">Please enter your phone number   </label>
@@ -29,19 +28,35 @@ export function BasicInfo() {
   )
 }
 
-function infoTyped (name, email, phoneNumber) {
+function InfoTyped (name, email, phoneNumber) {
 
 
   return (
     <>
-    
+      <h3></h3>
     </>
   ) 
     
 
 }
 
-function Resume () {
+export function Resume () {
+  const [name, setName] = useState('')
+
+  function handleChange(e) {
+    setName(e.target.value)
+    console.log(name)
+  }
+
+  return (
+    <>
+    <BasicInfo
+    value={name}
+    onChange={handleChange}
+    />
+    <InfoTyped></InfoTyped>
+    </>
+  )
 
 }
 
