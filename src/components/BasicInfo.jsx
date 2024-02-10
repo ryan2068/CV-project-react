@@ -28,12 +28,12 @@ function BasicInfo({ onChange, value }) {
   )
 }
 
-function InfoTyped (name, email, phoneNumber) {
+function InfoTyped ({onChange, value}) {
 
 
   return (
     <>
-      <h3></h3>
+      <h3>{value}</h3>
     </>
   ) 
     
@@ -46,15 +46,19 @@ export function Resume () {
   function handleChange(e) {
     setName(e.target.value)
     console.log(name)
+    
   }
 
   return (
     <>
-    <BasicInfo
-    value={name}
-    onChange={handleChange}
-    />
-    <InfoTyped></InfoTyped>
+      <BasicInfo
+      value={name}
+      onChange={handleChange}
+      />
+      <InfoTyped 
+      value={name}
+      onChange={handleChange}
+      ></InfoTyped>
     </>
   )
 
